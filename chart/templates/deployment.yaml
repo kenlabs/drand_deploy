@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: drand-contianer
-        image: drandorg/go-drand:{{.Values.tag}}
+        image: ghcr.io/drand/go-drand:{{.Values.tag}}
         command: ["start", "--verbose", "--private-listen", "0.0.0.0:8080", "--public-listen", "0.0.0.0:9080", "--tls-disable"] 
         # --cert-dir "/data/drand/.drand/tls_certificates" --tls-cert "/data/drand/.drand/tls_keypair/cert.pem" --tls-key "/data/drand/.drand/tls_keypair/key.pem"
         ports:
