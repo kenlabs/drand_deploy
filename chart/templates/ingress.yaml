@@ -16,6 +16,8 @@ metadata:
     release:  drand-ingress
 spec:
   ingressClassName: nginx
+  tls:
+  - secretName: drand-kenlabs-org-tls
   rules:
   - host: drand.kenlabs.org
     http:

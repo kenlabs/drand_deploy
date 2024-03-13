@@ -1,0 +1,11 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: drand-kenlabs-org-certificate
+spec:
+  secretName: drand-kenlabs-org-tls
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  dnsNames:
+    - drand.kenlabs.org
