@@ -17,10 +17,10 @@ spec:
       containers:
       - name: drand-contianer
         image: drandorg/go-drand:v1.5.11
-        command: --verbose 2 start --private-listen 0.0.0.0:8080 --cert-dir "/data/drand/.drand/tls_certificates" --tls-cert "/data/drand/.drand/tls_keypair/cert.pem" --tls-key "/data/drand/.drand/tls_keypair/key.pem"
+        command: start --verbose --private-listen 0.0.0.0:8080 --control 8888 --public-listen 0.0.0.0:9080 --cert-dir "/data/drand/.drand/tls_certificates" --tls-cert "/data/drand/.drand/tls_keypair/cert.pem" --tls-key "/data/drand/.drand/tls_keypair/key.pem"
         ports:
         - containerPort: 8080 # 指定容器内的端口号
-        - containerPort: 9999 # 指定容器内的度量指标端口号
+        - containerPort: 9080 # 指定容器内的度量指标端口号
         - containerPort: 8888 # 指定容器内的控制端口号
           volumeMounts:
             - name: drand-home

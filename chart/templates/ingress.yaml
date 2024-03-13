@@ -4,6 +4,7 @@ metadata:
   name: drand-ingress
   annotations:
     meta.helm.sh/release-name: drand-ingress
+    nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/proxy-connect-timeout: "30"
     nginx.ingress.kubernetes.io/proxy-read-timeout: "1800"
