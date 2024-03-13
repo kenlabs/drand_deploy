@@ -15,7 +15,7 @@ metadata:
     heritage: Helm
     release:  drand-ingress
 spec:
-  ingressClassName: {{.Values.ingress_name}}
+  ingressClassName: nginx
   rules:
   - host: drand.kenlabs.org
     http:

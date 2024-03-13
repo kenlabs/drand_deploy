@@ -16,8 +16,9 @@ spec:
     spec:
       containers:
       - name: drand-contianer
-        image: drandorg/go-drand:v1.5.11
-        command: start --verbose --private-listen 0.0.0.0:8080 --control 8888 --public-listen 0.0.0.0:9080 --cert-dir "/data/drand/.drand/tls_certificates" --tls-cert "/data/drand/.drand/tls_keypair/cert.pem" --tls-key "/data/drand/.drand/tls_keypair/key.pem"
+        image: drandorg/go-drand:{{.Values.tag}}
+        command: start --verbose --private-listen 0.0.0.0:8080 --control 8888 --public-listen 0.0.0.0:9080 --tls-disable 
+        # --cert-dir "/data/drand/.drand/tls_certificates" --tls-cert "/data/drand/.drand/tls_keypair/cert.pem" --tls-key "/data/drand/.drand/tls_keypair/key.pem"
         ports:
         - containerPort: 8080 # 指定容器内的端口号
         - containerPort: 9080 # 指定容器内的度量指标端口号
