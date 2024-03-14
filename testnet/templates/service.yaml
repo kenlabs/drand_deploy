@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: drandtest-service
+  labels:
+    app: drandtest
+spec:
+  type: ClusterIP
+  selector:
+    app: drandtest
+  ports:
+    - protocol: TCP
+      name: private
+      port: 8080
+      targetPort: 8080
+    - protocol: TCP
+      name: public
+      port: 9080
+      targetPort: 9080
+    - protocol: TCP
+      name: grpc
+      port: 8888
+      targetPort: 8888

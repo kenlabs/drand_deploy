@@ -1,0 +1,31 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: drandtest-ingress
+  annotations:
+    meta.helm.sh/release-name: drandtest-ingress
+    nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "30"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "1800"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "1800"
+  labels:
+    apptype: drandtest-ingress
+    app.kubernetes.io/managed-by: Helm
+    heritage: Helm
+    release:  drandtest-ingress
+spec:
+  ingressClassName: nginx
+  tls:
+  - secretName: drandtest-kenlabs-org-tls
+  rules:
+  - host: drandtest.kenlabs.org
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: drandtest-service
+            port:
+              number: 8080 # 指定Service的端口号

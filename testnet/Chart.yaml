@@ -1,0 +1,12 @@
+apiVersion: v2
+name: drandtest
+description: Install drandtest.
+version: 1.0.0
+kubeVersion: < 1.28.0-0
+home: https://drand.kenlabs.org/
+keywords:
+  - drandtest
+sources:
+  - https://github.com/Brownjy/drand
+maintainers:
+  - name: drand team
