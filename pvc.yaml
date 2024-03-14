@@ -1,6 +1,5 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
-namespace: drand
 metadata:
   name: drand-home
 spec:

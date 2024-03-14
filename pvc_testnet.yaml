@@ -1,8 +1,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
-namespace: drand
 metadata:
-  name: test-drand-home
+  name: drandtest-home
 spec:
   storageClassName: nfs-client
   accessModes:
