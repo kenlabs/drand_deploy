@@ -2,4 +2,4 @@
 # Enable this flag and add your CA certs as a secret named tls-ca-additional in the namespace.
 # See README.md for details.
 replicas: 1
-tag: v1.5.11
+tag: v2.0.5-testnet
